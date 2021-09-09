@@ -4,7 +4,6 @@ package datachannel
 import (
 	"fmt"
 	"io"
-	"log"
 	"sync/atomic"
 
 	"github.com/pion/logging"
@@ -128,7 +127,6 @@ func Accept(a *sctp.Association, config *Config) (*DataChannel, error) {
 
 // Server accepts a data channel over an SCTP stream
 func Server(stream *sctp.Stream, config *Config) (*DataChannel, error) {
-	log.Println("datachannel - server - ReadSCTP")
 	buffer := make([]byte, receiveMTU)
 	n, ppi, err := stream.ReadSCTP(buffer)
 	if err != nil {
@@ -190,7 +188,6 @@ func (c *DataChannel) Serve(p []byte, ppi sctp.PayloadProtocolIdentifier) {
 // Read reads a packet of len(p) bytes as binary data
 func (c *DataChannel) Read(p []byte) (int, error) {
 	n, _, err := c.ReadDataChannel(p)
-	log.Println("DC Read, bytes/err:", n, err)
 	return n, err
 }
 
