@@ -1,5 +1,7 @@
 module github.com/pion/datachannel
 
+replace github.com/pion/sctp => ../sctp
+
 require (
 	github.com/pion/logging v0.2.2
 	github.com/pion/sctp v1.7.12
