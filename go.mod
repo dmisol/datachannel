@@ -1,10 +1,7 @@
-module github.com/pion/datachannel
-
-replace github.com/pion/sctp => ../sctp
+module github.com/dmisol/datachannel
 
 require (
 	github.com/pion/logging v0.2.2
-	github.com/pion/sctp v1.7.12
 	github.com/pion/transport v0.12.3
 	github.com/stretchr/testify v1.7.0
 )
